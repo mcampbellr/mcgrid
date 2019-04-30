@@ -1,11 +1,11 @@
 .mc-form{
-    &--input-group{
+    &__input-group{
         display: flex;
         flex-direction: column;
         position: relative;
     }
 
-    &--input{
+    &__input{
         display: block;
         margin: 0;
         padding: 1em .5em;
@@ -34,13 +34,13 @@
         }
     }
 
-    &--help-block{
+    &__help-block{
         margin: .5rem 0;
         color: #858585;
         font-size: var(--font-sz-sm);
     }
 
-    &--password{
+    &__password{
         color: #000;
         position: relative;
         i{
@@ -53,16 +53,16 @@
         }
     }
 
-    &--label{
+    &__label{
         color: $main-color;
         margin: .5rem 0;
     }
 
-    &--actions{
+    &__actions{
         margin: 1em 0;
     }
 
-    &--help-links{
+    &__help-links{
         *{
             margin: .5rem 0;
         }
