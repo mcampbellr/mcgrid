@@ -1,0 +1,113 @@
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:focus, &.focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 25%);
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 8%);
+    border-color: darken($border, 12%);
+  }
+
+  &.btn-dark{
+    &:hover {
+      color: black;
+      background-color: darken(white, 8%);
+      border-color: darken(white, 12%);
+    }
+  }
+
+  &:active, &.active, .open > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 12%);
+
+    &:hover, &:focus, &.focus {
+      color: $color;
+      background-color: darken($background, 17%);
+      border-color: darken($border, 25%);
+    }
+  }
+  &:active, &.active, .open > &.dropdown-toggle {
+    background-image: none;
+    transform : scale(.97);
+  }
+  &.disabled, &[disabled], fieldset[disabled] & {
+    &, &:hover, &:focus, &.focus, &:active, &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+@mixin button($background) {
+  $color: #fff;
+  $border: 5%;
+  @if (lightness($background) >= lightness(#aaa)) {
+    $color: #333;
+    $border: .2 * lightness($background);
+  }
+  @include button-variant($color, $background, darken($background, $border));
+  // btn sizing
+  display: inline-block;
+  padding: .4em .8em;
+  margin-bottom: 0;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border-radius: .2em;
+  transition: all .5s;
+  text-decoration: none;
+  &.squared{
+    border-radius: 0;
+  }
+  &.btn-block{
+    display: block;
+    width: 100%;
+  }
+  &.btn-flex{
+    flex: auto;
+    margin: 2px;
+  }
+  &.btn-small{
+    font-size: .8em;
+  }
+  &.btn-xsmall{
+    font-size: .5em;
+  }
+  &.btn-lg{
+    font-size: 1.2em;
+  }
+}
+
+.btn-link {
+  padding: .4em .8em;
+}
+
+// Main buttons
+.btn { @include button($main-color); }
+
+@each $name, $color in $colors {
+  .btn-#{$name} { @include button($color); }
+}
+
+
+.pk-btns-group{
+  &>*{
+    margin: 0 5px;
+  }
+}

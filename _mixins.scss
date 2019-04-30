@@ -1,0 +1,23 @@
+// Media Query mixin
+
+@mixin mq ($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media screen and (min-width: map-get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else if type-of($bp) == number and unit($bp) == 'px' {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}
+
+@mixin profile-image ($image, $h: 3rem) {
+  border-radius: 50%;
+  height: $h;
+  width: $h;
+  background-image: url($image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

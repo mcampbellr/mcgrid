@@ -1,0 +1,5 @@
+// Images function
+
+@function img ($img) {
+  @return url($images_path + $img);
+}

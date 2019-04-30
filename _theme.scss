@@ -1,0 +1,37 @@
+// Text align
+.txt-center {
+  text-align: center
+}
+.txt-justify {
+  text-align: justify
+}
+
+// Text Sizing
+.txt-normal {
+  font-size: var(--font-sz-body);
+}
+
+.txt-xs {
+  font-size: var(--font-sz-xs);
+}
+.txt-s {
+  font-size: var(--font-sz-sm);
+}
+.txt-md {
+  font-size: var(--font-sz-md);
+}
+
+
+@each $index, $color in $colors {
+  .txt-#{$index} {
+    color: $color;
+  }
+}
+
+
+// Backgroun- styles
+@each $index, $color in $colors {
+  .bg-#{$index} {
+    background-color: $color;
+  }
+}

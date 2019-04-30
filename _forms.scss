@@ -1,0 +1,70 @@
+.mc-form{
+    &--input-group{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    &--input{
+        display: block;
+        margin: 0;
+        padding: 1em .5em;
+        color: inherit;
+        width: 100%;
+        font-size: 1em;
+        line-height: 1.5em;
+        border: none;
+        border-radius: .4rem;
+        transition: all .5s;
+        &.un-shadow{
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+        &.tin-shadow{
+            &:focus {
+                outline: none;
+                box-shadow: 0.2rem 0.2rem 1rem rgba(black, .3);
+            }
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0.3rem 0.3rem 1.6rem black;
+        }
+    }
+
+    &--help-block{
+        margin: .5rem 0;
+        color: #858585;
+        font-size: var(--font-sz-sm);
+    }
+
+    &--password{
+        color: #000;
+        position: relative;
+        i{
+            color: #858585;
+            position: absolute;
+            right: .5rem;
+            top: 2.5rem;
+            cursor: pointer;
+            padding: .5rem;
+        }
+    }
+
+    &--label{
+        color: $main-color;
+        margin: .5rem 0;
+    }
+
+    &--actions{
+        margin: 1em 0;
+    }
+
+    &--help-links{
+        *{
+            margin: .5rem 0;
+        }
+    }
+}
